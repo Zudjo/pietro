@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="immagini/logo/logo_small_icon_only.ico" />
+    <title>Università Zaro</title>
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="row vh-100 vw-100"> <!-- Riga 1 -->
+        <div class="col-4 bg-light position-relative"> <!-- Colonna 1 -->
+
+          <div class="row h-25 position-relative"> <!-- Riga 1 in Colonna 1 -->
+            <div class="position-absolute top-50 start-50 translate-middle"> <!-- Messaggio informativo -->
+              <p class="fs-1 fw-light text-center"><b>Bentornato <?php echo $_REQUEST["utente_nome"];?>!</b><br>Scegli cosa vuoi fare</p>
+            </div>
+          </div>
+
+          <div class="row h-75 position-relative"> <!-- Riga 2 in Colonna 1 -->
+            <div class="position-absolute top-50 start-50 translate-middle d-flex flex-column justify-content-center">
+              <a href=<?php echo ("studenti_visualizza_corsi_interni.php?matricola_studente=" . $_REQUEST["Matricola_studenti"]) ?> class="align-self-center w-75"><input type="button" class="btn btn-outline-dark my-3 py-3 w-100" name="" value="Visualizza corsi interni"></a>
+              <a href=<?php echo ("studenti_visualizza_corsi_esterni.php?matricola_studente=" . $_REQUEST["Matricola_studenti"]) ?> class="align-self-center w-75"><input type="button" class="btn btn-outline-dark my-3 py-3 w-100" name="" value="Visualizza corsi esterni"></a>
+              <a href=<?php echo ("studenti_visualizza_corsi_frequentando.php?matricola_studente=" . $_REQUEST["Matricola_studenti"]) ?> class="align-self-center w-75"><input type="button" class="btn btn-outline-dark my-3 py-3 w-100" name="" value="Corsi che stai frequentando"></a>
+              <a href=<?php echo ("studenti_visualizza_esiti.php?matricola_studente=" . $_REQUEST["Matricola_studenti"]) ?> class="align-self-center w-75"><input type="button" class="btn btn-outline-dark my-3 py-3 w-100" name="" value="Visualizza esito anni precedenti"></a>
+              <a href=<?php echo ("studenti_visualizza_dati_personali.php?utente_nome=" . $_REQUEST["utente_nome"]) ?> class="align-self-center w-75"><input type="button" class="btn btn-outline-dark my-3 py-3 w-100" name="" value="Visualizza i tuoi dati personali"></a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Immagine login -->
+        <div class="col-8 bg-dark"> <!-- Colonna 2 -->
+          <div class="w-100 h-100 position-relative">
+            <img class="img-fluid h-75 position-absolute end-0 top-50 translate-middle-y" src="../immagini/login.svg" alt="porca boia">
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+
+  </body>
+</html>

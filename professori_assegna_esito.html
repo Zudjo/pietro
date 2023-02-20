@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="immagini/logo/logo_small_icon_only.ico" />
+    <title>Università Zaro</title>
+  </head>
+  <body class="">
+    <div class="container-fluid fw-light">
+
+      <div class="row vh-100"> <!-- Riga 1 -->
+
+        <div class="col-4 bg-light"> <!-- Colonna 1 -->
+
+          <div class="d-flex flex-column"> <!-- Titolo -->
+            <h1 class="display-3 align-self-start p-3 mb-5">Assegna Esito</h1>
+          </div>
+
+          <div class="d-flex flex-column">
+
+            <form class="" action="professori_assegna_esito.php" method="get">
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- numero -->
+                <div class="d-flex flex-row py-0 my-0 px-3">
+                  <h3 class="fw-light p-0">Scegli classe</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <select name="classe" class="form-select w-75">
+                    <?php
+                      print_select_classi();
+                    ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- numero -->
+                <div class="d-flex flex-row py-0 my-0 px-3">
+                  <h3 class="fw-light p-0">Scegli studente</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <select name="studente" class="form-select w-75">
+                    <?php
+                      print_select_studenti();
+                    ?>
+                  </select>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- numero -->
+                <div class="d-flex flex-row py-0 my-0 px-3">
+                  <h3 class="fw-light p-0">Promosso</h3>
+                </div>
+                <div class="d-flex flex-row px-3 w-75">
+                  <input type="radio" class="btn-check" id="btn_si" name="promozione" value="si" checked>
+                  <label class="btn btn-outline-dark w-50 me-1" for="btn_si">Sì</label>
+
+                  <input type="radio" class="btn-check" id="btn_no" name="promozione" value="no">
+                  <label class="btn btn-outline-dark w-50 ms-1" for="btn_no">No</label>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- numero -->
+                <div class="d-flex flex-row py-0 my-0 px-3">
+                  <h3 class="fw-light p-0">Media finale</h3>
+                </div>
+                <div class="d-flex flex-row px-3 w-75">
+                  <input class="form-control my-1 py-1" type="number" name="media_finale" value="">
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row p-3">
+                  <input class="btn btn-outline-dark w-75 h-50 py-1" type="submit" name="" value="Assegna">
+                </div>
+              </div>
+
+            </form>
+
+            <div class="d-flex"> <!-- Feedback -->
+              <p class="m-0 px-3">
+                <?php
+                  $ar = mysqli_affected_rows($link);
+                  if ($ar) {
+                    echo "Esiti assegnati.";
+                  } else if (isset($_REQUEST["media_finale"]) && $_REQUEST["media_finale"]!="") {
+                    echo "C'è stato un errore. Lo studente potrebbe non frequentare la classe selezionata.";
+                  }
+                ?>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-8 bg-dark text-light"> <!-- Colonna 2 -->
+          <div class="h-100 position-relative">
+            <img class="img-fluid h-75 position-absolute end-0 top-50 translate-middle-y" src="../immagini/login.svg" alt="porca boia">
+          </div>
+        </div>
+
+    </div>
+  </body>
+</html>

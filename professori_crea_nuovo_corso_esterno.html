@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="immagini/logo/logo_small_icon_only.ico" />
+    <title>Università Zaro</title>
+  </head>
+  <body>
+    <div class="container-fluid fw-light">
+
+      <div class="row"> <!-- Riga 1 -->
+
+        <div class="col-4 bg-light"> <!-- Colonna 1 -->
+
+          <div class="d-flex flex-column"> <!-- Titolo -->
+            <h1 class="display-3 align-self-start p-3 mb-5">Crea nuovo corso esterno</h1>
+          </div>
+
+          <div class="d-flex flex-column">
+
+            <form class="" action="professori_crea_nuovo_corso_esterno.php" method="get">
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- numero -->
+                <div class="d-flex flex-row py-0 my-0 px-3">
+                  <h3 class="fw-light p-0">Titolo</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <input class="form-control w-75 py-1 my-1" type="text" name="titolo" value="">
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- sezione -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Descrizione</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <input class="form-control align-self-center w-75 my-1 py-1" type="text" name="descrizione" value="">
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Data Inizio</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-1 py-1" type="text" name="data_inizio" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Data Fine</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-1 py-1" type="text" name="data_fine" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Totale Ore</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-1 py-1" type="text" name="totale_ore" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Ente</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-1 py-1" type="text" name="ente" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Documentazione</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-1 py-1" type="text" name="documentazione" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Codice</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-1 py-1" type="text" name="codice" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light">Matricola Professore</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-1 py-1" type="text" name="matricola_professore" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start pt-1"> <!-- anno -->
+                <div class="d-flex flex-row p-3">
+                  <input class="btn btn-outline-dark w-75 h-50 py-1" type="submit" name="" value="Crea">
+                </div>
+              </div>
+
+            </form>
+
+            <div class="d-flex"> <!-- Feedback -->
+              <p>
+                <?php
+                  if ($risultato) echo "Classe aggiunta.";
+                  else if (isset($_REQUEST["titolo"]) && !$risultato && $_REQUEST["titolo"]!="") echo "Errore.";
+                ?>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-8 bg-dark text-light"> <!-- Colonna 2 -->
+          <div class="h-100 position-relative">
+            <img class="img-fluid h-75 position-absolute end-0 top-50 translate-middle-y" src="../immagini/login.svg" alt="porca boia">
+          </div>
+        </div>
+
+    </div>
+  </body>
+</html>

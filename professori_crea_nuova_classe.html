@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="immagini/logo/logo_small_icon_only.ico" />
+    <title>Università Zaro</title>
+  </head>
+  <body>
+    <div class="container-fluid fw-light">
+
+      <div class="row vh-100 vw-100"> <!-- Riga 1 -->
+
+        <div class="col-4 bg-light h-100 p-1"> <!-- Colonna 1 -->
+
+          <div class="d-flex flex-column h-25 mb-5 px-3"> <!-- Titolo -->
+            <h1 class="display-3 align-self-start">Crea nuova classe</h1>
+          </div>
+
+          <div class="d-flex flex-column h-75">
+
+            <form class="p-0 m-0 g-0" action="professori_crea_nuova_classe.php" method="get">
+
+              <div class="d-flex flex-column justify-content-start"> <!-- numero -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light ms-1">Numero</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <input class="form-control w-75 py-3 my-3" type="text" name="numero" value="">
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start"> <!-- sezione -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light ms-1">Sezione</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <input class="form-control align-self-center w-75 my-3 py-3" type="text" name="sezione" value="">
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start"> <!-- anno -->
+                <div class="d-flex flex-row px-3">
+                  <h3 class="fw-light ms-1">Anno</h3>
+                </div>
+                <div class="d-flex flex-row px-3">
+                  <div class="d-flex flex-row w-75">
+                    <input class="form-control my-3 py-3" type="text" name="anno" value="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="d-flex flex-column justify-content-start"> <!-- anno -->
+                <div class="d-flex flex-row p-3">
+                  <input class="btn btn-outline-dark w-75 h-50 py-3" type="submit" name="" value="Crea">
+                </div>
+              </div>
+
+            </form>
+
+            <div class="d-flex p-3"> <!-- Feedback -->
+              <p>
+                <?php
+                  if ($risultato) echo "Classe aggiunta.";
+                  //else echo "Errore";
+                ?>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-8 bg-dark text-light h-100 p-5"> <!-- Colonna 2 -->
+          <div class="w-100 h-100 position-relative">
+            <img class="img-fluid h-75 position-absolute end-0 top-50 translate-middle-y" src="../immagini/login.svg" alt="porca boia">
+          </div>
+        </div>
+
+    </div>
+  </body>
+</html>

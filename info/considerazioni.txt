@@ -1,0 +1,32 @@
+ -------
+| Testo |
+ -------
+"nonché i risultati scolastici conseguiti da ciascuno studente"
+
+Considero "risultati scolastici" come esito anno scolastico,
+quindi promosso/rimandato/bocciato
+
+
+ --------------
+| Diagramma ER |
+ --------------
+Creo un entità "Professori" per poter verificare al login se l'utente
+è un professore o uno studente. Ed anche per dare la possibilità ad un
+utente del sistema (che sia professore), di aggiungere corsi interni, esterni,
+segnare i debiti, le promozioni e le bocciature.
+
+Creo due entità separate di corsi per evitare un attributo "tipo" e dover
+quindi gestire il valore nullo riguardo l'ente e la documentazione in caso
+di corso esterno.
+
+
+ ----------
+| Database |
+ ----------
+Tutti i nomi dei professori e degli studenti devono iniziare con la lettera maiuscola.
+
+Il tipo di corso (recupero e/o di sostegno e/o di arricchimento) viene specificato
+nella descrizione del corso
+
+
+

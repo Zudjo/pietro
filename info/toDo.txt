@@ -1,0 +1,8 @@
+------------
+- Database -
+------------
+- Informazioni riguardanti le attività scolastiche ed extrascolastiche, ovvero:
+	- Corsi
+		- Recupero
+		- Sostegno
+		- Arricchimento

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <link rel="shortcut icon" href="immagini/logo/logo_small_icon_only.ico" />
+    <title>Università Zaro</title>
+  </head>
+  <body>
+    <div class="container-fluid fw-light">
+
+      <div class="row vh-100 vw-100"> <!-- Riga 1 -->
+
+        <div class="col-4 bg-light h-100 p-1 d-flex flex-column justify-content-center"> <!-- Colonna 1 -->
+
+          <div class="d-flex flex-column h-25 mb-5 px-3"> <!-- Titolo -->
+            <h1 class="display-3 align-self-start">Corsi che stai frequentando</h1>
+          </div>
+
+          <div class="d-flex flex-column h-50">
+
+          </div>
+
+          <div class="d-flex flex-column h-25">
+
+          </div>
+        </div>
+
+        <div class="col-8 bg-dark text-light h-100 p-5"> <!-- Colonna 2 -->
+
+          <div class="container-fluid p-0 w-100 border border-white border-3 rounded">
+
+            <div class="row p-2 m-0 border-white border-bottom border-1 fw-bolder">
+
+              <div class="col">
+                Titolo
+              </div>
+
+              <div class="col">
+                Descrizione
+              </div>
+
+              <div class="col">
+                Data Inizio
+              </div>
+
+              <div class="col">
+                Data Fine
+              </div>
+
+              <div class="col">
+                Ore Totali
+              </div>
+
+              <div class="col">
+                Codice
+              </div>
+
+              <div class="col">
+                Documentazione
+              </div>
+
+              <div class="col">
+                Ente
+              </div>
+
+              </div>
+
+            <?php
+              require "connessione_db.php";
+
+              $matricola = $_REQUEST["matricola_studente"];
+
+              $query = "SELECT * FROM studenti_corsi_esterni JOIN corsi_esterni on studenti_corsi_esterni.Codice = corsi_esterni.codice WHERE studenti_corsi_esterni.Matricola_Studente = $matricola";
+
+              $risultato = mysqli_query($link, $query);
+
+              disegna_tabella_esterni($risultato);
+
+              $query = "SELECT * FROM studenti_corsi_interni JOIN corsi_interni on studenti_corsi_interni.Codice = corsi_interni.codice WHERE studenti_corsi_interni.Matricola_Studente = $matricola";
+
+              $risultato = mysqli_query($link, $query);
+
+              disegna_tabella_interni($risultato);
+
+            ?>
+
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

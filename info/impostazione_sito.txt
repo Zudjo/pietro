@@ -1,0 +1,13 @@
+------------------------
+- Possibilità studente -
+------------------------
+-> Scegliere corsi (recupero, sostegno, arricchimento, extra_scolastici)
+-> Visionare i suoi dati personali e le sue attivitá (corsi, presenze, etc..)
+
+-----------------------
+- Possibilità docente -
+-----------------------
+-> Aggiungere studenti
+-> Aggiungere corsi
+-> Visionare i suoi dati personali
+-> Visionare prestazioni classi, studenti e corsi
